@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article | Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 bg-white shadow-sm z-10">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-semibold text-blue-800">Business Analyst</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a>
+                    <a href="blogs.html" class="text-blue-700 font-medium hover:text-blue-900">Blogs</a>
+                    <a href="projects.html" class="text-gray-600 hover:text-blue-700">Projects</a>
+                    <a href="certifications.html" class="text-gray-600 hover:text-blue-700">Certifications</a>
+                    <a href="services.html" class="text-gray-600 hover:text-blue-700">Services</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-700">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4 space-y-3" id="mobile-menu">
+                <a href="index.html" class="block text-gray-600">Home</a>
+                <a href="blogs.html" class="block text-blue-700 font-medium">Blogs</a>
+                <a href="projects.html" class="block text-gray-600">Projects</a>
+                <a href="certifications.html" class="block text-gray-600">Certifications</a>
+                <a href="services.html" class="block text-gray-600">Services</a>
+                <a href="contact.html" class="block text-gray-600">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="min-h-screen">
+        <!-- Blog Content Area -->
+        <section class="bg-white py-8 border-b">
+            <div class="container mx-auto px-4">
+                <div id="blogDetailContainer" class="max-w-4xl mx-auto">
+                    <!-- Content will be loaded here automatically -->
+                    <div class="text-center py-12 text-gray-500">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-700 mx-auto mb-4"></div>
+                        <p>Loading blog article...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; <span id="current-year"></span> Business Analyst. All rights reserved.</p>
+            <p class="mt-2 text-sm text-gray-500">A professional resource for analytical insights and decision support.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/blog-detail.js"></script>
+</body>
+</html>

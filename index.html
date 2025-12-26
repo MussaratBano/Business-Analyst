@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mussarat Bano | Business Analyst | Data-Driven Insights & Decision Support</title>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- CSS before JavaScript -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        :root {
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 600;
+        }
+        
+        .logo-font {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        
+        /* Remove underline from logo link */
+        .logo-link {
+            text-decoration: none !important;
+        }
+        
+        .logo-link:hover {
+            text-decoration: none !important;
+        }
+        
+        /* Remove default link styling from logo container */
+        a.logo-link,
+        a.logo-link:hover,
+        a.logo-link:focus {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        /* Animation keyframes */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out forwards;
+        }
+        
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+        
+        /* Responsive font sizes */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.5rem; }
+            .lead-text { font-size: 1.125rem; }
+        }
+        
+        /* Performance optimizations */
+        .will-change-transform {
+            will-change: transform;
+        }
+        
+        /* Fix for service card transitions */
+        .service-card {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        
+        /* Improve hero performance */
+        .hero-gradient {
+            transform: translate3d(0,0,0);
+        }
+        
+        /* Better reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 bg-white shadow-sm z-10">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Updated logo link with no underline -->
+                <a href="index.html" class="logo-link flex items-center space-x-3 no-underline hover:no-underline">
+                    <!-- Monogram Logo -->
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-800 to-blue-600 rounded-full flex items-center justify-center shadow-md">
+                        <span class="text-white font-bold text-lg tracking-tight">MB</span>
+                    </div>
+                    <!-- Text Logo -->
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-900 logo-font">Mussarat Bano</span>
+                        <span class="text-xs text-gray-600 font-medium">Business Analyst</span>
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-blue-700 font-medium hover:text-blue-900 transition-colors duration-200">Home</a>
+                    <a href="blogs.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-200">Blogs</a>
+                    <a href="projects.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-200">Projects</a>
+                    <a href="certifications.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-200">Certifications</a>
+                    <a href="services.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-200">Services</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-200">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-600 focus:outline-none" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4 space-y-3" id="mobile-menu">
+                <a href="index.html" class="block text-blue-700 font-medium py-2">Home</a>
+                <a href="blogs.html" class="block text-gray-600 py-2">Blogs</a>
+                <a href="projects.html" class="block text-gray-600 py-2">Projects</a>
+                <a href="certifications.html" class="block text-gray-600 py-2">Certifications</a>
+                <a href="services.html" class="block text-gray-600 py-2">Services</a>
+                <a href="contact.html" class="block text-gray-600 py-2">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Enhanced Professional Hero Section -->
+        <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 md:py-32 hero-gradient overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-10 left-10 w-20 h-20 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                <div class="absolute bottom-10 right-10 w-32 h-32 bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-1000"></div>
+                <div class="absolute top-1/2 left-1/3 w-16 h-16 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-pulse delay-500"></div>
+            </div>
+            
+            <!-- Data Visualization Grid Pattern -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute inset-0" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Profile Badge -->
+                    <div class="flex items-center justify-center mb-8 animate-fade-in">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-full p-4 border border-white/20">
+                            <div class="w-24 h-24 bg-gradient-to-br from-white to-blue-100 rounded-full flex items-center justify-center shadow-lg mx-auto">
+                                <span class="text-4xl font-bold text-blue-800">MB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Hero Content -->
+                    <div class="text-center mb-12">
+                        <div class="inline-block mb-4">
+                            <span class="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-full animate-fade-in">
+                                <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>Professional Business Analyst
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
+                                    Mussarat Bano
+                                </span>
+                            </h1>
+                        </div>
+                        
+                        <div class="text-2xl md:text-3xl font-medium mb-8 animate-fade-in delay-200">
+                            <span class="text-blue-100">Data-Driven Decision Support</span>
+                            <span class="mx-4 text-blue-300">•</span>
+                            <span class="text-blue-100">Business Process Optimization</span>
+                        </div>
+                        
+                        <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-10 animate-fade-in delay-300">
+                            Translating complex business challenges into actionable insights through rigorous analysis, strategic thinking, and measurable outcomes.
+                        </p>
+                        
+                        <!-- Call to Action Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-500">
+                            <a href="projects.html" 
+                               class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl flex items-center justify-center will-change-transform">
+                                <i class="fas fa-briefcase mr-3" aria-hidden="true"></i>
+                                View My Projects
+                            </a>
+                            <a href="contact.html" 
+                               class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl flex items-center justify-center will-change-transform">
+                                <i class="fas fa-paper-plane mr-3" aria-hidden="true"></i>
+                                Let's Connect
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Scroll Indicator -->
+                    <div class="text-center animate-bounce mt-12">
+                        <a href="#introduction" class="text-white/70 hover:text-white" aria-label="Scroll to introduction">
+                            <i class="fas fa-chevron-down text-2xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden">
+                <svg class="w-full h-16 md:h-24 lg:h-32 xl:h-40 block"
+                    viewBox="0 0 1440 120"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M0 120H1440V60C1440 60 1320 0 1200 0C1080 0 960 60 840 60C720 60 600 0 480 0C360 0 240 60 120 60C0 60 0 120 0 120Z" fill="#F9FAFB"/>
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- Professional Summary -->
+        <section id="introduction" class="py-20 bg-white reveal">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <!-- Profile Image Placeholder -->
+                    <div class="md:w-1/3">
+                        <div class="bg-gradient-to-br from-blue-100 to-white p-2 rounded-2xl shadow-xl transform hover:rotate-1 transition-transform duration-300 will-change-transform">
+                            <div class="bg-blue-700 text-white w-full h-64 rounded-xl flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-6xl font-bold mb-2">MB</div>
+                                    <div class="text-lg font-medium">Mussarat Bano</div>
+                                    <div class="text-blue-200 mt-2">Business Analyst</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Introduction Content -->
+                    <div class="md:w-2/3">
+                        <div class="inline-flex items-center mb-6 animate-fade-in">
+                            <div class="h-1 w-12 bg-blue-700 mr-4"></div>
+                            <h2 class="text-2xl font-bold text-gray-800">About me</h2>
+                        </div>
+                        
+                        <h3 class="text-4xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                            Transforming Business Challenges<br>
+                            <span class="text-blue-700">Into Strategic Opportunities</span>
+                        </h3>
+                        
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6 animate-fade-in delay-200">
+                            I'm <span class="font-semibold text-blue-800">Mussarat Bano</span>,a Business Analyst with a strong academic foundation in Pure Mathematics. My background in mathematical reasoning and abstraction enables me to approach business problems with structured thinking, logical clarity, and analytical precision. I specialize in translating complex business requirements into well-defined problem statements and actionable insights, ensuring alignment between business objectives and technical or process-oriented solutions.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8 animate-fade-in delay-300">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3" aria-hidden="true"></i>
+                                <span class="text-gray-700">Requirements Analysis</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3" aria-hidden="true"></i>
+                                <span class="text-gray-700">Data Visualization</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3" aria-hidden="true"></i>
+                                <span class="text-gray-700">Process Optimization</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3" aria-hidden="true"></i>
+                                <span class="text-gray-700">Stakeholder Management</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html" class="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900 animate-fade-in delay-400 transition-colors duration-200">
+                            <span>Schedule a Consultation</span>
+                            <i class="fas fa-arrow-right ml-3" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Expertise -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Core Expertise</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Specialized skills and methodologies that drive business transformation and measurable results
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Expertise Cards with Icons -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 service-card reveal will-change-transform">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-clipboard-list text-blue-700 text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Business Process Mappings(BPMs)</h3>
+                        <p class="text-gray-700">Designing, modeling, and optimizing end-to-end workflows with precision using industry-standard notation(BPMN 2.0) to visualize, analyze, and streamline enterprise operations for maximum clarity and efficiency.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 service-card reveal delay-100 will-change-transform">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-bar text-blue-700 text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Analysis & Reporting</h3>
+                        <p class="text-gray-700">Working with datasets to extract patterns, generate insights, and deliver structured reports that inform strategic decision-making.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 service-card reveal delay-200 will-change-transform">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-tachometer-alt text-blue-700 text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Dashboard & KPI Interpretation</h3>
+                        <p class="text-gray-700">Developing and interpreting performance metrics and dashboards to track business outcomes and inform data-driven strategy.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 service-card reveal delay-300 will-change-transform">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-project-diagram text-blue-700 text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Process Improvement</h3>
+                        <p class="text-gray-700">Mapping existing workflows, identifying inefficiencies, and recommending data-backed optimizations for enhanced operational efficiency.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 service-card reveal delay-400 will-change-transform">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-comments text-blue-700 text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Stakeholder Communication</h3>
+                        <p class="text-gray-700">Facilitating clear dialogue between technical and non-technical audiences to align on goals, findings, and strategic direction.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 service-card reveal delay-500 will-change-transform">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-blue-700 text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Decision Support</h3>
+                        <p class="text-gray-700">Providing evidence-based analysis and scenarios to support critical business decisions, risk assessment, and strategic planning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="py-20 bg-white reveal">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Certifications</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Industry-recognized credentials verified through Credly that demonstrate commitment to continuous professional development.
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-gray-100 rounded-2xl p-8 md:p-12 mb-10 border border-blue-100">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-1/4 text-center">
+                            <div class="bg-white p-6 rounded-xl shadow-lg inline-block">
+                                <i class="fab fa-google text-5xl text-blue-700" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Google Professional Certifications</h3>
+                            <p class="text-gray-700 mb-4">
+                                Multiple Google Professional Certificates in AI Essentials, Prompt Engineering and Data Analytics (in progress). These credentials validate expertise in leading industry tools and methodologies.
+                            </p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium">AI Essentials</span>
+                                <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">Prompt Engineering</span>
+                                <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">Data Analytics (in progress)</span>
+                            </div>
+                            <a href="certifications.html" class="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900 transition-colors duration-200">
+                                <span>View All Verified Certifications</span>
+                                <i class="fas fa-external-link-alt ml-3" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="certifications.html" class="inline-block bg-gradient-to-r from-blue-700 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 will-change-transform">
+                        <i class="fas fa-award mr-3" aria-hidden="true"></i>
+                        View Professional Credentials
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Delivery -->
+        <section class="py-20 bg-gray-50 reveal">
+            <div class="container mx-auto px-4 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Delivering Business Value</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        How analytical expertise translates into tangible business outcomes
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-700">
+                        <div class="text-4xl text-blue-700 mb-4" aria-hidden="true">📈</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Data-Informed Decisions</h3>
+                        <p class="text-gray-700">
+                            Transforming raw data into actionable insights that support strategic decision-making and drive measurable business growth.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-600">
+                        <div class="text-4xl text-blue-600 mb-4" aria-hidden="true">⚙️</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Process Optimization</h3>
+                        <p class="text-gray-700">
+                            Identifying inefficiencies and implementing streamlined workflows that enhance productivity and reduce operational costs.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500">
+                        <div class="text-4xl text-blue-500 mb-4" aria-hidden="true">🎯</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Strategic Clarity</h3>
+                        <p class="text-gray-700">
+                            Providing clear, structured analysis that helps stakeholders understand complex challenges and focus on high-impact solutions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="services.html" class="inline-flex items-center text-blue-700 font-semibold text-lg hover:text-blue-900 transition-colors duration-200">
+                        <i class="fas fa-handshake mr-3 text-2xl" aria-hidden="true"></i>
+                        <span>Explore How I Can Add Value to Your Organization</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <span class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">MB</span>
+                    <span class="text-xl font-semibold text-white">Mussarat Bano</span>
+                </div>
+                <p class="text-gray-400">Professional Business Analyst & Data Strategist</p>
+            </div>
+            
+            <div class="flex justify-center space-x-8 mb-8">
+                <!-- <a href="mailto:mussaratbano025@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Email">
+                    <i class="fas fa-envelope text-xl" aria-hidden="true"></i>
+                </a> -->
+                <a href="https://linkedin.com/in/mussarat-bano-62208a395" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin text-xl" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/MussaratBano" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="GitHub">
+                    <i class="fab fa-github text-xl" aria-hidden="true"></i>
+                </a>
+            </div>
+            
+            <div class="text-center border-t border-gray-800 pt-8">
+                <p>&copy; <span id="current-year"></span> Mussarat Bano. All rights reserved.</p>
+                <p class="mt-2 text-sm text-gray-500">A professional resource for analytical insights and decision support.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/enhanced-animations.js"></script>
+    <!-- Back to Home button (hidden by default; becomes visible when at page bottom) -->
+    <a id="back-to-home" href="index.html" aria-label="Back to Home" title="Back to Home" class="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-blue-700 to-blue-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 transform opacity-0 pointer-events-none translate-y-4 hover:from-blue-800 hover:to-blue-700 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        <i class="fas fa-home mr-2" aria-hidden="true"></i>
+        <span class="hidden sm:inline">Back to Home</span>
+    </a>
+    <script>
+        // Simple script for mobile menu and current year
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Add smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Reveal animation on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+            
+            revealElements.forEach(element => {
+                const revealTop = element.getBoundingClientRect().top;
+                
+                if (revealTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Performance optimization: remove will-change after animations
+        setTimeout(() => {
+            document.querySelectorAll('.will-change-transform').forEach(el => {
+                el.style.willChange = 'auto';
+            });
+        }, 1000);
+
+        // Show Back to Home button only when scrolled to bottom
+        (function() {
+            const backBtn = document.getElementById('back-to-home');
+            if (!backBtn) return;
+
+            const checkAtBottom = () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const winH = window.innerHeight;
+                const docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+                const threshold = 50; // px from bottom to trigger
+
+                if (scrollTop + winH >= docH - threshold) {
+                    backBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                } else {
+                    backBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                }
+            };
+
+            window.addEventListener('scroll', checkAtBottom);
+            window.addEventListener('resize', checkAtBottom);
+            window.addEventListener('load', checkAtBottom);
+            // initial check
+            checkAtBottom();
+        })();
+    </script>
+</body>
+</html>

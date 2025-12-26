@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Insights & Articles | Business Analyst</title> <script src="https://cdn.tailwindcss.com"></script> <link rel="stylesheet" href="css/style.css"> </head> <body class="bg-gray-50 text-gray-800 font-sans"> <!-- Header / Navigation --> <header class="sticky top-0 bg-white shadow-sm z-10"> <nav class="container mx-auto px-4 py-4"> <div class="flex justify-between items-center"> <a href="index.html" class="text-xl font-semibold text-blue-800">Business Analyst</a> <div class="hidden md:flex space-x-8"> <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a> <a href="blogs.html" class="text-blue-700 font-medium hover:text-blue-900">Blogs</a> <a href="projects.html" class="text-gray-600 hover:text-blue-700">Projects</a><a href="certifications.html" class="text-blue-700 font-medium hover:text-blue-900">Certifications</a> <a href="services.html" class="text-gray-600 hover:text-blue-700">Services</a> <a href="contact.html" class="text-gray-600 hover:text-blue-700">Contact</a> </div> <button class="md:hidden text-gray-600" id="mobile-menu-button"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg> </button> </div> <div class="md:hidden hidden mt-4 space-y-3" id="mobile-menu"> <a href="index.html" class="block text-gray-600">Home</a> <a href="blogs.html" class="block text-blue-700 font-medium">Blogs</a> <a href="projects.html" class="block text-gray-600">Projects</a> <a href="certifications.html" class="block text-gray-600">Certifications</a> <a href="services.html" class="block text-gray-600">Services</a> <a href="contact.html" class="block text-gray-600">Contact</a> </div> </nav> </header>
+  <main class="min-h-screen">
+        <!-- Page Header -->
+        <section class="bg-white py-12 border-b reveal">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">Insights & Articles</h1>
+                <p class="text-lg text-gray-700 max-w-3xl animate-fade-in delay-200">
+                Analytical perspectives on business requirements, data interpretation, stakeholder collaboration, and decision support methodologies.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Blogs Listing Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div id="blogsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamic content will load here from blogs.js -->
+                    <div class="text-center py-12 text-gray-500 col-span-full">
+                        <p>Loading professional insights...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+   </main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-8">
+    <div class="container mx-auto px-4 text-center">
+        <p>&copy; <span id="current-year"></span> Business Analyst. All rights reserved.</p>
+        <p class="mt-2 text-sm text-gray-500">A professional resource for analytical insights and decision support.</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/blogs.js"></script>
+<script>
+    // Simple script for mobile menu and current year
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+<script src="js/enhanced-animations.js"></script>
+    <!-- Back to Home button (hidden by default; becomes visible when at page bottom) -->
+    <a id="back-to-home" href="index.html" aria-label="Back to Home" title="Back to Home" class="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-blue-700 to-blue-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 transform opacity-0 pointer-events-none translate-y-4 hover:from-blue-800 hover:to-blue-700 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        <i class="fas fa-home mr-2" aria-hidden="true"></i>
+        <span class="hidden sm:inline">Back to Home</span>
+    </a>
+
+    <script>
+        // Show Back to Home button only when scrolled to bottom
+        (function() {
+            const backBtn = document.getElementById('back-to-home');
+            if (!backBtn) return;
+
+            const checkAtBottom = () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const winH = window.innerHeight;
+                const docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+                const threshold = 50; // px from bottom to trigger
+
+                if (scrollTop + winH >= docH - threshold) {
+                    backBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                } else {
+                    backBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                }
+            };
+
+            window.addEventListener('scroll', checkAtBottom);
+            window.addEventListener('resize', checkAtBottom);
+            window.addEventListener('load', checkAtBottom);
+            checkAtBottom();
+        })();
+    </script>
+</body> </html>

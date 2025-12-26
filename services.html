@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Services | Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 bg-white shadow-sm z-10">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-semibold text-blue-800">Business Analyst</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-700">Home</a>
+                    <a href="blogs.html" class="text-gray-600 hover:text-blue-700">Blogs</a>
+                    <a href="projects.html" class="text-gray-600 hover:text-blue-700">Projects</a>
+                    <a href="certifications.html" class="text-gray-600 hover:text-blue-700">Certifications</a>
+                    <a href="services.html" class="text-blue-700 font-medium hover:text-blue-900">Services</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-700">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4 space-y-3" id="mobile-menu">
+                <a href="index.html" class="block text-gray-600">Home</a>
+                <a href="blogs.html" class="block text-gray-600">Blogs</a>
+                <a href="projects.html" class="block text-gray-600">Projects</a>
+                <a href="certifications.html" class="text-blue-700 font-medium hover:text-blue-900">Certifications</a>
+                <a href="services.html" class="block text-blue-700 font-medium">Services</a>
+                <a href="contact.html" class="block text-gray-600">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="min-h-screen">
+        <!-- Page Header -->
+        <section class="bg-white py-12 border-b reveal">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-up">Professional Services</h1>
+                <p class="text-lg text-gray-700 max-w-3xl animate-fade-in delay-200">
+                    Structured analytical services designed to support business objectives through data-driven insights, process optimization, and clear stakeholder communication.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Listing Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Service 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition-colors service-card reveal">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Business Process Analysis</h3>
+                        <p class="text-gray-700 mb-4">
+                            Mapping and analysis of current workflows to identify inefficiencies, bottlenecks, and opportunities for optimization.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Delivers streamlined operations and measurable improvements in efficiency and resource allocation.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition-colors service-card reveal delay-100">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Dashboard Development & Visualization</h3>
+                        <p class="text-gray-700 mb-4">
+                            Design and implementation of interactive dashboards and data visualizations that translate complex metrics into actionable business insights.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Enables real-time performance monitoring and data-driven decision-making across organizational levels.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition-colors service-card reveal delay-200">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Business Problem Optimization</h3>
+                        <p class="text-gray-700 mb-4">
+                            Systematic analysis of business challenges to identify root causes, evaluate solutions, and recommend data-backed improvement strategies.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Provides structured approaches to problem-solving that balance analytical rigor with practical implementation.
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition-colors service-card reveal delay-300">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Business Process Architecture (BPMN 2.0)</h3>
+                        <p class="text-gray-700 mb-4">
+                            Designing and optimizing critical business workflows using industry-standard BPMN 2.0 to drive clarity, efficiency, and strategic alignment across the organization.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Strengthens organizational decision-making by utilizing BPMS intelligence to provide actionable insights, performance benchmarks, and structured roadmaps for continuous process improvement.
+                        </p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition-colors service-card reveal delay-400">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Performance Cycle Analysis</h3>
+                        <p class="text-gray-700 mb-4">
+                            Evaluation of business performance across operational cycles through KPI tracking, trend analysis, and outcome measurement.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Supports continuous improvement by identifying performance patterns and informing strategic adjustments.
+                        </p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:border-blue-300 transition-colors service-card reveal delay-500">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Stakeholder Communication & Documentation</h3>
+                        <p class="text-gray-700 mb-4">
+                            Clear articulation of analytical findings and requirements to both technical and non-technical audiences through structured reports and presentations.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            Ensures alignment, facilitates collaboration, and supports informed decision-making across teams.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Approach Section -->
+        <section class="py-16 bg-gray-100 reveal">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-fade-in-up">Engagement Approach</h2>
+                <div>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Analytical work follows a structured, collaborative methodology focused on understanding business context, defining clear objectives, and delivering actionable insights.
+                    </p>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start animate-fade-in delay-300">
+                            <span class="text-blue-600 mr-3">•</span>
+                            <span><strong>Clarity First:</strong> Begin with thorough requirement analysis to establish shared understanding and measurable goals.</span>
+                        </li>
+                        <li class="flex items-start animate-fade-in delay-400">
+                            <span class="text-blue-600 mr-3">•</span>
+                            <span><strong>Data-Driven Foundation:</strong> Ensure every analysis is rooted in pertinent data, interpreted through suitable tools and rigorous methodologies.</span>
+                        </li>
+                        <li class="flex items-start animate-fade-in delay-500">
+                            <span class="text-blue-600 mr-3">•</span>
+                            <span><strong>Structured Delivery:</strong> Present findings in formats that support decision-making, from detailed reports to executive summaries.</span>
+                        </li>
+                        <li class="flex items-start animate-fade-in delay-600">
+                            <span class="text-blue-600 mr-3">•</span>
+                            <span><strong>Collaborative Implementation:</strong> Work alongside stakeholders to ensure insights are understood, actionable, and aligned with business objectives.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; <span id="current-year"></span> Business Analyst. All rights reserved.</p>
+            <p class="mt-2 text-sm text-gray-500">A professional resource for analytical insights and decision support.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/enhanced-animations.js"></script>
+    <script>
+        // Simple script for mobile menu and current year
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    
+    <!-- Back to Home button (hidden by default; becomes visible when at page bottom) -->
+    <a id="back-to-home" href="index.html" aria-label="Back to Home" title="Back to Home" class="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-blue-700 to-blue-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 transform opacity-0 pointer-events-none translate-y-4 hover:from-blue-800 hover:to-blue-700 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        <i class="fas fa-home mr-2" aria-hidden="true"></i>
+        <span class="hidden sm:inline">Back to Home</span>
+    </a>
+
+    <script>
+        // Show Back to Home button only when scrolled to bottom
+        (function() {
+            const backBtn = document.getElementById('back-to-home');
+            if (!backBtn) return;
+
+            const checkAtBottom = () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const winH = window.innerHeight;
+                const docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+                const threshold = 50; // px from bottom to trigger
+
+                if (scrollTop + winH >= docH - threshold) {
+                    backBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                } else {
+                    backBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                }
+            };
+
+            window.addEventListener('scroll', checkAtBottom);
+            window.addEventListener('resize', checkAtBottom);
+            window.addEventListener('load', checkAtBottom);
+            checkAtBottom();
+        })();
+    </script>
+</body>
+</html>

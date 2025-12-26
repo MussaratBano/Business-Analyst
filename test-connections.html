@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Connections</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .success { color: green; }
+        .error { color: red; }
+        pre { background: #f5f5f5; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Testing File Connections</h1>
+    
+    <div id="results"></div>
+    
+    <script>
+        async function testConnection(url) {
+            try {
+                const response = await fetch(url);
+                return {
+                    url,
+                    ok: response.ok,
+                    status: response.status,
+                    exists: true
+                };
+            } catch (error) {
+                return {
+                    url,
+                    ok: false,
+                    status: 'Error',
+                    exists: false,
+                    error: error.message
+                };
+            }
+        }
+        
+        async function runTests() {
+            const results = document.getElementById('results');
+            const tests = [
+                'index.html',
+                'blogs.html',
+                'projects.html',
+                'services.html',
+                'contact.html',
+                'css/style.css',
+                'js/main.js',
+                'js/blogs.js',
+                'js/projects.js',
+                'data/blogs.json',
+                'data/projects.json'
+            ];
+            
+            for (const test of tests) {
+                const result = await testConnection(test);
+                const div = document.createElement('div');
+                
+                if (result.exists && result.ok) {
+                    div.className = 'success';
+                    div.innerHTML = `✅ ${test} - Found (${result.status})`;
+                } else {
+                    div.className = 'error';
+                    div.innerHTML = `❌ ${test} - ${result.error || 'Not found'}`;
+                }
+                
+                results.appendChild(div);
+            }
+            
+            // Test JSON parsing
+            try {
+                const blogs = await fetch('data/blogs.json').then(r => r.json());
+                const p = document.createElement('p');
+                p.className = 'success';
+                p.textContent = `✅ blogs.json parsed successfully: ${blogs.length} articles`;
+                results.appendChild(p);
+            } catch (e) {
+                const p = document.createElement('p');
+                p.className = 'error';
+                p.textContent = `❌ blogs.json parsing failed: ${e.message}`;
+                results.appendChild(p);
+            }
+        }
+        
+        runTests();
+    </script>
+        <script src="js/enhanced-animations.js"></script>
+    <!-- Back to Home button (hidden by default; becomes visible when at page bottom) -->
+    <a id="back-to-home" href="index.html" aria-label="Back to Home" title="Back to Home" class="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-blue-700 to-blue-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300 transform opacity-0 pointer-events-none translate-y-4 hover:from-blue-800 hover:to-blue-700 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        <i class="fas fa-home mr-2" aria-hidden="true"></i>
+        <span class="hidden sm:inline">Back to Home</span>
+    </a>
+
+    <script>
+        // Show Back to Home button only when scrolled to bottom
+        (function() {
+            const backBtn = document.getElementById('back-to-home');
+            if (!backBtn) return;
+
+            const checkAtBottom = () => {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const winH = window.innerHeight;
+                const docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+                const threshold = 50; // px from bottom to trigger
+
+                if (scrollTop + winH >= docH - threshold) {
+                    backBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                } else {
+                    backBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                    backBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                }
+            };
+
+            window.addEventListener('scroll', checkAtBottom);
+            window.addEventListener('resize', checkAtBottom);
+            window.addEventListener('load', checkAtBottom);
+            checkAtBottom();
+        })();
+    </script>
+</body>
+</html>
