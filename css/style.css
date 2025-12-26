@@ -714,3 +714,24 @@ video:not([src]) {
   object-fit:contain;   /* crop band */
 }
 video{width:100%;height:auto;object-fit:contain;display:block;}
+/* ===== MOBILE MENU FIX ===== */
+#mobile-menu:not(.hidden) {
+    display: block !important;
+}
+
+#mobile-menu-button {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    #mobile-menu-button {
+        display: block !important;
+    }
+    
+    #mobile-menu {
+        background: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+}

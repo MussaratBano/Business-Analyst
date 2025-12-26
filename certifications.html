@@ -34,7 +34,7 @@
                 <a href="certifications.html" class="block text-blue-700 font-medium">Certifications</a>
                 <a href="services.html" class="block text-gray-600">Services</a>
                 <a href="contact.html" class="block text-gray-600">Contact</a>
-            </div>
+            </div>  
         </nav>
     </header>
 
@@ -266,6 +266,40 @@
             window.addEventListener('load', checkAtBottom);
             checkAtBottom();
         })();
+    </script>
+    <!-- EMERGENCY MOBILE MENU FIX -->
+    <script>
+        // Direct fix - no dependencies
+        console.log("🆘 Emergency mobile menu fix loaded");
+        
+        var fixButton = document.getElementById('mobile-menu-button');
+        var fixMenu = document.getElementById('mobile-menu');
+        
+        if (fixButton && fixMenu) {
+            console.log("🆘 Found elements for emergency fix");
+            
+            fixButton.onclick = function() {
+                console.log("🆘 EMERGENCY: Button clicked");
+                
+                // Method 1: Toggle class
+                if (fixMenu.classList.contains('hidden')) {
+                    fixMenu.classList.remove('hidden');
+                    console.log("🆘 Removed hidden class");
+                } else {
+                    fixMenu.classList.add('hidden');
+                    console.log("🆘 Added hidden class");
+                }
+                
+                // Method 2: Toggle style directly (backup)
+                if (fixMenu.style.display === 'none' || fixMenu.style.display === '') {
+                    fixMenu.style.display = 'block';
+                    console.log("🆘 Set display: block");
+                } else {
+                    fixMenu.style.display = 'none';
+                    console.log("🆘 Set display: none");
+                }
+            };
+        }
     </script>
 </body>
 </html>

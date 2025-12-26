@@ -1,84 +1,40 @@
 // main.js - Global JavaScript for Business Analyst Website
 
 // ===== DOM Ready Handler =====
+// main.js - Mobile menu fix version
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== Mobile Navigation Toggle =====
+    console.log("✅ Main.js loaded");
+    
+    // ===== MOBILE MENU FIX =====
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
+        console.log("✅ Mobile menu elements found");
+        
+        mobileMenuButton.addEventListener('click', function(e) {
+            console.log("🟢 Mobile menu button clicked!");
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Close mobile menu when clicking outside
+        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+            if (!mobileMenu.contains(event.target) && 
+                !mobileMenuButton.contains(event.target) && 
+                !mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
             }
         });
+    } else {
+        console.error("❌ Mobile menu elements NOT found!");
     }
     
-    // ===== Current Year Update =====
+    // ===== CURRENT YEAR UPDATE =====
     const currentYearElement = document.getElementById('current-year');
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
-    
-    // ===== External Link Handling =====
-    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.host + '"])');
-    externalLinks.forEach(function(link) {
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-    });
-    
-    // ===== Smooth Scroll for Anchor Links =====
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#') {
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    const headerHeight = document.querySelector('header')?.offsetHeight || 0;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            }
-        });
-    });
-    
-    // ===== Form Validation Helper (if forms are added later) =====
-    const forms = document.querySelectorAll('form');
-    forms.forEach(function(form) {
-        form.addEventListener('submit', function(e) {
-            const requiredFields = form.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(function(field) {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                } else {
-                    field.classList.remove('border-red-500');
-                }
-            });
-            
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    });
 });
 
 // ===== Utility Functions =====
