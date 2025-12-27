@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This static website serves as a professional platform for a professional Business Analyst to demonstrate analytical capabilities, share insights, and present structured business analysis work. The site emphasizes practical problem-solving, data-driven decision support, and clear stakeholder communication through a clean, maintainable technical architecture.
+This static website serves as a professional platform for a Business Analyst to demonstrate analytical capabilities, share insights, and present structured business analysis work. The site emphasizes practical problem-solving, data-driven decision support, and clear stakeholder communication through a clean, maintainable technical architecture.
 
 ## Website Sections
 
@@ -78,7 +78,7 @@ JavaScript files dynamically render this content, allowing for content updates w
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd ba-professional-website
+   cd ba-portfolio
    ```
 
 2. Open the project in VS Code (or preferred editor)
@@ -98,8 +98,7 @@ The website is configured for deployment via GitHub Pages:
 2. Navigate to Repository Settings → Pages
 3. Set source to "Deploy from a branch"
 4. Select the `main` branch and `/ (root)` folder
-5. The site will deploy to `https://<username>.github.io/<repository-name>/`
-
+5. The site will deploy to `https://mussaratbano.github.io/Business-Analyst/`
 All paths use relative references compatible with GitHub Pages hosting. No additional configuration is required beyond the initial repository setup.
 
 ## Maintenance & Extension

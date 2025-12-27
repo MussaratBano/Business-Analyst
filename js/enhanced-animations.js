@@ -221,7 +221,7 @@ function addBusinessIconAnimations() {
         iconElement.style.cssText = `
             position: absolute;
             font-size: 2rem;
-            opacity: 0.2;
+            opacity: 0.25;
             transform: scale(0.8) rotate(0deg);
             transition: all 15s linear;
             animation-duration: ${20 + (index % 10)}s;
