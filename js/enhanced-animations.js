@@ -332,7 +332,7 @@ function addBusinessIconAnimations() {
             @media (max-width: 768px) {
                 .business-icons-container div {
                     font-size: 1.5rem !important;
-                    opacity: 0.05 !important;
+                    opacity: 0.25 !important;
                 }
             }
         `;
